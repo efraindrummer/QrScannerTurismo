@@ -36,11 +36,11 @@ class WelcomePage extends StatelessWidget {
               color: Color(0xFF396afc),
               topCardWidget: CustomTop(),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             SlimyCard(
               color: Color(0xFF396afc),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             SlimyCard(
               color: Color(0xFF396afc),
             ),
