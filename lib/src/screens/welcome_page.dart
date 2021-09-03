@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qrturismo/src/screens/scanner_page.dart';
 import 'package:qrturismo/src/widgets/CustomBottomNavigation.dart';
 import 'package:slimy_card/slimy_card.dart';
 
@@ -16,7 +17,9 @@ class WelcomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.qr_code_scanner_outlined), 
-            onPressed: (){}
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ScannerPage()));
+            }
           ),
           IconButton(
             icon: Icon(Icons.view_carousel_sharp), 
@@ -35,6 +38,7 @@ class WelcomePage extends StatelessWidget {
             SizedBox(height: 30),
             SlimyCard(
               color: Color(0xFF396afc),
+              topCardWidget: CustomTop(),
             ),
             SizedBox(height: 10),
             SlimyCard(
@@ -48,6 +52,17 @@ class WelcomePage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: CustomBottomNavigationBar(),
+    );
+  }
+}
+
+class CustomTop extends StatelessWidget {
+  const CustomTop({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text("Tap to Open"),
     );
   }
 }
