@@ -22,10 +22,6 @@ class WelcomePage extends StatelessWidget {
             }
           ),
           IconButton(
-            icon: Icon(Icons.view_carousel_sharp), 
-            onPressed: (){}
-          ),
-          IconButton(
             icon: Icon(Icons.account_circle), 
             onPressed: (){}
           ),
