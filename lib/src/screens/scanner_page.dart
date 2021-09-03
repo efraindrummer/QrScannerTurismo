@@ -18,8 +18,12 @@ class ScannerPage extends StatelessWidget {
               Image.asset("assets/image/splash_image.png", width: 200),
               TextButton(
                 onPressed: () async {
-                  String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode('0xFF396afc', 'Cancelar', false, ScanMode.QR);
+                  String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode('0xFF396afc', 'Cancelar', false, ScanMode.QR) ;
                   print(barcodeScanRes);
+
+                  if(barcodeScanRes == '-1'){
+                    return;
+                  }
                 }, 
                 child: Text(
                   "Scanear Ahora!", 
