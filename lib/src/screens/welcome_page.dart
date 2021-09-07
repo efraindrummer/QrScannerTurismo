@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qrturismo/src/screens/scanner_page.dart';
 import 'package:qrturismo/src/widgets/CustomBottomNavigation.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:slimy_card/slimy_card.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -17,8 +17,13 @@ class WelcomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.qr_code_scanner_outlined), 
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ScannerPage()));
+            onPressed: () async {
+              String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode('0xFF396afc', 'Cancelar', false, ScanMode.QR) ;
+              print(barcodeScanRes);
+        
+              if(barcodeScanRes == '-1'){
+                return;
+              }
             }
           ),
           IconButton(
