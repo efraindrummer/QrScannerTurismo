@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qrturismo/src/widgets/CustomBottomNavigation.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-import 'package:slimy_card/slimy_card.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key key}) : super(key: key);
@@ -20,10 +19,6 @@ class WelcomePage extends StatelessWidget {
             onPressed: () async {
               String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode('0xFF396afc', 'Cancelar', false, ScanMode.QR) ;
               print(barcodeScanRes);
-        
-              if(barcodeScanRes == '-1'){
-                return;
-              }
             }
           ),
           IconButton(
@@ -33,22 +28,28 @@ class WelcomePage extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         child: ListView(
           children: <Widget>[
-            SizedBox(height: 30),
-            SlimyCard(
-              color: Color(0xFF396afc),
-              topCardWidget: CustomTop(),
-            ),
-            SizedBox(height: 20),
-            SlimyCard(
-              color: Color(0xFF396afc),
-            ),
-            SizedBox(height: 20),
-            SlimyCard(
-              color: Color(0xFF396afc),
-            ),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
+            _buildItem("Primer elemento", "ver tu viaje"),
           ],
         ),
       ),
@@ -66,4 +67,12 @@ class CustomTop extends StatelessWidget {
       child: Text("Tap to Open"),
     );
   }
+}
+
+Widget _buildItem(String textTitle, String subTitle){
+  return new ListTile(
+    title: new Text(textTitle),
+    subtitle: new Text(subTitle),
+    leading: new Icon(Icons.card_travel),
+  );
 }
