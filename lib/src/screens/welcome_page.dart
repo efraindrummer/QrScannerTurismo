@@ -32,24 +32,25 @@ class WelcomePage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             _buildItem("Primer elemento", "ver tu viaje"),
+            Divider(),
             _buildItem("Primer elemento", "ver tu viaje"),
+            Divider(),
             _buildItem("Primer elemento", "ver tu viaje"),
+            Divider(),
             _buildItem("Primer elemento", "ver tu viaje"),
+            Divider(),
             _buildItem("Primer elemento", "ver tu viaje"),
+            Divider(),
             _buildItem("Primer elemento", "ver tu viaje"),
+            Divider(),
             _buildItem("Primer elemento", "ver tu viaje"),
+            Divider(),
             _buildItem("Primer elemento", "ver tu viaje"),
+            Divider(),
             _buildItem("Primer elemento", "ver tu viaje"),
+            Divider(),
             _buildItem("Primer elemento", "ver tu viaje"),
-            _buildItem("Primer elemento", "ver tu viaje"),
-            _buildItem("Primer elemento", "ver tu viaje"),
-            _buildItem("Primer elemento", "ver tu viaje"),
-            _buildItem("Primer elemento", "ver tu viaje"),
-            _buildItem("Primer elemento", "ver tu viaje"),
-            _buildItem("Primer elemento", "ver tu viaje"),
-            _buildItem("Primer elemento", "ver tu viaje"),
-            _buildItem("Primer elemento", "ver tu viaje"),
-            _buildItem("Primer elemento", "ver tu viaje"),
+            Divider(),
           ],
         ),
       ),
@@ -74,5 +75,8 @@ Widget _buildItem(String textTitle, String subTitle){
     title: new Text(textTitle),
     subtitle: new Text(subTitle),
     leading: new Icon(Icons.card_travel),
+    onTap: (){
+      print(textTitle);
+    },
   );
 }
